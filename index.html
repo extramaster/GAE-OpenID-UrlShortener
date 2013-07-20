@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>URLShortener</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen">
+<link rel="shortcut icon" href="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<script type="text/javascript">
+function urlCheck(obj)
+{
+	if (!isUrl(document.getElementById("url").value))
+	{
+		alert ("The url in the textbox is not valid.  Please try again.");
+                document.getElementById("url").focus();
+                return false;
+	}
+	return true;
+}
+
+function isUrl(s) {
+	var regexp = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+	return regexp.test(s);
+}
+
+window.onload = function(){document.getElementById("url").focus();};
+
+</script>
+</head>
+<body>
+<div id="header">
+<p>Welcome, <em>{{ username }}</em>! [<a href="{{ logoutlink }}">sign out</a>]</p>
+</div>
+<div id="content">
+<h2></h2>
+<p>Enter a url below and click <strong>Shorten</strong> to create a short link.</p>
+<form action="create" method="get" onsubmit="return urlCheck(this);">
+<input class="textbox" type="text" maxlength="2000" size="55" id="url" name="url" value="">
+<input class="button" type="submit" value="Shorten">
+</form>
+</div>
+</div>
+</body>
+</html>

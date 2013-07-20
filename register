@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>URLShortener - Register</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen">
+<link rel="shortcut icon" href="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<body>
+<div id="header">
+<p>[<a href="{{ logoutlink }}">sign out</a>]</p>
+</div>
+<div id="content">
+<form method="get" action="/register" style="text-align:center">
+<p>Looks like you're new here.. Choose a username to continue: <input type="text" name="setnick"><input type="submit" value="Register!"></p>
+</form>
+</div>
+</body></html>
